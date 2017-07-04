@@ -1,6 +1,6 @@
 # @graubnla/helpers
 
-Loose collection of utility functions with expressivenes and minimal overhead in mind. All helpers are written in ES2015 and have tests.
+Loose collection of utility functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and have tests.
 
 ## Table of contents
 
@@ -29,7 +29,7 @@ var cloneArray = require('@graubnla/helpers/cloneArray');
 
 ## Methods
 
-### cloneArray
+### cloneArray(arr: Array)
 
 Clones an array.
 
@@ -39,7 +39,7 @@ const arr = ['monkey', 'lion'];
 const clonedArr = cloneArray(arr);
 ```
 
-### cloneObject
+### cloneObject(obj: Object)
 
 Clones an object.
 
@@ -49,7 +49,7 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
-### formatNumber
+### formatNumber(num: number, precision?: number, decimal?: string, thousand?: string)
 
 Formats number.
 
@@ -59,7 +59,9 @@ const num = 3.1415;
 console.log(formatNumber(num)); // 3,14
 ```
 
-### onReady
+### onReady(cb: Function)
+
+Executes callback on document ready.
 
 ```JavaScript
 onReady(() => {
@@ -67,14 +69,16 @@ onReady(() => {
 });
 ```
 
-### pipe
+### pipe(fn1: Function, fn2: Function, ...)
+
+Pipe argument through multiple functions.
 
 ```JavaScript
 const process = pipe(fn1, fn2, fn3);
 const result = process(arg);
 ```
 
-### prettyJSON
+### prettyJSON(obj: Object)
 
 Pretty prints JSON string.
 
@@ -84,14 +88,14 @@ const obj = {
   num: 2
 };
 
-console.log(prettyJSON(obj'));
-//{
-//  "animal": "monkey",
-//  "num": 2
-//}
+console.log(prettyJSON(obj));
+// {
+//   "animal": "monkey",
+//   "num": 2
+// }
 ```
 
-### round
+### round(num: number, precision?: number)
 
 Round numbers with given precision.
 
@@ -99,7 +103,9 @@ Round numbers with given precision.
 console.log(round(3.1415, 2)); // 3.14
 ```
 
-### stripTags
+### stripTags(str: string)
+
+Strip all html like tags from string.
 
 ```JavaScript
 const str = '<p>I like monkeys.</p>';
@@ -107,7 +113,9 @@ const str = '<p>I like monkeys.</p>';
 console.log(stripTags(str)); // I like monkeys.
 ```
 
-### toPercent
+### toPercent(num: number)
+
+Generate percent value of given input.
 
 ```JavaScript
 const num = 0.12;
@@ -115,7 +123,9 @@ const num = 0.12;
 console.log(toPercent(num)); // 12
 ```
 
-### toSlug
+### toSlug(str: string)
+
+Create slug from string. Transforms to lower-case, remove whitespace, and special chars.
 
 ```JavaScript
 const str = 'I like monkeys.';
@@ -126,4 +136,4 @@ console.log(toSlug(str)); // i-like-monkeys
 
 ## License
 
-[MIT](https://github.com/lgraubner/mqr/blob/master/LICENSE) © [Lars Graubner](https://larsgraubner.com)
+[MIT](https://github.com/lgraubner/helpers/blob/master/LICENSE) © [Lars Graubner](https://larsgraubner.com)

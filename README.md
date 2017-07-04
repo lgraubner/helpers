@@ -54,9 +54,9 @@ const clonedObj = cloneObject(obj);
 Formats number.
 
 ```JavaScript
-const num = 3.1415;
+const num = 3256.1415;
 
-console.log(formatNumber(num)); // 3,14
+console.log(formatNumber(num, 2, ',', '.')); // 3.256,14
 ```
 
 ### onReady(cb: Function)

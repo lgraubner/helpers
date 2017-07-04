@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# npm stuff
+node_modules
+yarn-error.log
+npm-debug.log

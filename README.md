@@ -29,7 +29,9 @@ var cloneArray = require('@graubnla/helpers/cloneArray');
 
 ## Methods
 
-### cloneArray(arr: Array): Array
+### cloneArray(arr)
+
+Returns `Array`
 
 Clones an array.
 
@@ -39,7 +41,9 @@ const arr = ['monkey', 'lion'];
 const clonedArr = cloneArray(arr);
 ```
 
-### cloneObject(obj: Object): Object
+### cloneObject(obj)
+
+Returns `Object`
 
 Clones an object.
 
@@ -49,7 +53,9 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
-### formatNumber(num: number, precision?: number, decimal?: string, thousand?: string): string
+### formatNumber(num[, precision, decimal, thousand])
+
+Returns `string`
 
 Formats number.
 
@@ -59,7 +65,7 @@ const num = 3256.1415;
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
 ```
 
-### onReady(cb: Function): void
+### onReady(cb)
 
 Executes callback on document ready.
 
@@ -69,7 +75,7 @@ onReady(() => {
 });
 ```
 
-### pipe(fn1: Function, fn2: Function, ...): mixed
+### pipe(fn1, fn2[, fn3, ...])
 
 Pipe argument through multiple functions.
 
@@ -78,7 +84,9 @@ const process = pipe(fn1, fn2, fn3);
 const result = process(arg);
 ```
 
-### prettyJSON(obj: Object): string
+### prettyJSON(obj)
+
+Returns `string`
 
 Pretty prints JSON string.
 
@@ -95,7 +103,9 @@ console.log(prettyJSON(obj));
 // }"
 ```
 
-### round(num: number, precision?: number): number
+### round(num[, precision])
+
+Returns `number`
 
 Round numbers with given precision.
 
@@ -103,7 +113,9 @@ Round numbers with given precision.
 console.log(round(3.1415, 2)); // 3.14
 ```
 
-### stripTags(str: string): string
+### stripTags(str)
+
+Returns `string`
 
 Strip all html like tags from string.
 
@@ -113,7 +125,9 @@ const str = '<p>I like monkeys.</p>';
 console.log(stripTags(str)); // I like monkeys.
 ```
 
-### toPercent(num: number): number
+### toPercent(num)
+
+Returns `number`
 
 Generate percent value of given input.
 
@@ -123,7 +137,9 @@ const num = 0.12;
 console.log(toPercent(num)); // 12
 ```
 
-### toSlug(str: string): string
+### toSlug(str)
+
+Returns `string`
 
 Create slug from string. Transforms to lower-case, remove whitespace, and special chars.
 

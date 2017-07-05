@@ -1,4 +1,4 @@
-import round from '../round';
+import { round } from '../round';
 
 test('should default export a function', () => {
   expect(round).toBeInstanceOf(Function);

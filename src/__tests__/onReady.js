@@ -1,4 +1,4 @@
-import onReady from '../onReady';
+import { onReady } from '../onReady';
 
 test('should default export a function', () => {
   expect(onReady).toBeInstanceOf(Function);

@@ -1,1 +1,1 @@
-export default d => JSON.stringify(d, null, 2);
+export const prettyJSON = d => JSON.stringify(d, null, 2);

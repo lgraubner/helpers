@@ -1,1 +1,1 @@
-export default s => s.replace(/<[^>]+>/gi, '');
+export const stripTags = s => s.replace(/<[^>]+>/gi, '');

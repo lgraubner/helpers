@@ -1,1 +1,1 @@
-export default n => Number(n) * 100;
+export const toPercent = n => Number(n) * 100;

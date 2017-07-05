@@ -1,4 +1,4 @@
-import pipe from '../pipe';
+import { pipe } from '../pipe';
 
 test('should default export a function', () => {
   expect(pipe).toBeInstanceOf(Function);

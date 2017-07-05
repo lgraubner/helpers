@@ -1,1 +1,1 @@
-export default o => Object.assign({}, o);
+export const cloneObject = o => Object.assign({}, o);

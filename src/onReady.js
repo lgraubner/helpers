@@ -1,4 +1,4 @@
-export default fn => {
+export const onReady = fn => {
   if (document.readyState !== 'loading') {
     fn();
   } else {

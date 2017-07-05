@@ -1,6 +1,6 @@
 # @graubnla/helpers
 
-Loose collection of utility functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and have tests.
+Loose collection of utility functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and are tested thoroughly.
 
 ## Table of contents
 
@@ -17,14 +17,19 @@ $ npm install @graubnla/helpers
 ```
 
 This helpers are not meant to be included as whole package. Instead you should cherry pick only the functions you need.
-Therefore you need an appropriate bundler such as browserify or webpack. Also you should likely transpile ES2015 to ES5 in your build step.
 
 ```JavaScript
 // ES2015 module
-import cloneArray from '@graubnla/helpers/cloneArray';
+import { cloneArray } from '@graubnla/helpers';
 
 // CommonJS
-var cloneArray = require('@graubnla/helpers/cloneArray');
+var cloneArray = require('@graubnla/helpers').cloneArray;
+```
+
+The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/#/):
+
+```HTML
+<script src="https://unpkg.com/mqr/dist/helpers.js"></script>
 ```
 
 ## Methods
@@ -36,6 +41,8 @@ Returns `Array`
 Clones an array.
 
 ```Javascript
+import { cloneArray } from '@graubnla/helpers';
+
 const arr = ['monkey', 'lion'];
 
 const clonedArr = cloneArray(arr);
@@ -48,6 +55,8 @@ Returns `Object`
 Clones an object.
 
 ```Javascript
+import { cloneObject } from '@graubnla/helpers';
+
 const obj = { animal: 'monkey' };
 
 const clonedObj = cloneObject(obj);
@@ -60,6 +69,8 @@ Returns `string`
 Formats number.
 
 ```JavaScript
+import { formatNumber } from '@graubnla/helpers';
+
 const num = 3256.1415;
 
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
@@ -70,6 +81,8 @@ console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
 Executes callback on document ready.
 
 ```JavaScript
+import { onReady } from '@graubnla/helpers';
+
 onReady(() => {
   // document ready
 });
@@ -80,6 +93,8 @@ onReady(() => {
 Pipe argument through multiple functions.
 
 ```JavaScript
+import { pipe } from '@graubnla/helpers';
+
 const process = pipe(fn1, fn2, fn3);
 const result = process(arg);
 ```
@@ -91,6 +106,8 @@ Returns `string`
 Pretty prints JSON string.
 
 ```JavaScript
+import { prettyJSON } from '@graubnla/helpers';
+
 const obj = {
   animal: 'monkey',
   num: 2
@@ -110,6 +127,8 @@ Returns `number`
 Round numbers with given precision.
 
 ```JavaScript
+import { round } from '@graubnla/helpers';
+
 console.log(round(3.1415, 2)); // 3.14
 ```
 
@@ -120,6 +139,8 @@ Returns `string`
 Strip all html like tags from string.
 
 ```JavaScript
+import { stripTags } from '@graubnla/helpers';
+
 const str = '<p>I like monkeys.</p>';
 
 console.log(stripTags(str)); // I like monkeys.
@@ -132,6 +153,8 @@ Returns `number`
 Generate percent value of given input.
 
 ```JavaScript
+import { toPercent } from '@graubnla/helpers';
+
 const num = 0.12;
 
 console.log(toPercent(num)); // 12
@@ -144,6 +167,8 @@ Returns `string`
 Create slug from string. Transforms to lower-case, remove whitespace, and special chars.
 
 ```JavaScript
+import { toSlug } from '@graubnla/helpers';
+
 const str = 'I like monkeys.';
 
 console.log(toSlug(str)); // i-like-monkeys

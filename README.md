@@ -29,7 +29,7 @@ var cloneArray = require('@graubnla/helpers').cloneArray;
 The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/#/):
 
 ```HTML
-<script src="https://unpkg.com/mqr/dist/helpers.js"></script>
+<script src="https://unpkg.com/@graubnla/helpers/dist/helpers.js"></script>
 ```
 
 ## Methods

@@ -62,6 +62,20 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
+### forEach(elements, cb)
+
+Iterates over Array like collections such as node lists.
+
+```JavaScript
+import { forEach } from '@graubnla/helpers';
+
+const list = document.getElementsByTagName('p');
+
+forEach(list, (el, index) => {
+  console.log(el, index);
+});
+```
+
 ### formatNumber(num[, precision, decimal, thousand])
 
 Returns `string`

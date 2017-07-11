@@ -146,7 +146,7 @@ import { round } from '@graubnla/helpers';
 console.log(round(3.1415, 2)); // 3.14
 ```
 
-### scrollTo(dest, [, duration, easing])
+### scrollTo(dest[, duration, easing])
 
 Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
 

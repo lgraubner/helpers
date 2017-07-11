@@ -1,6 +1,6 @@
 import { cloneArray } from '../cloneArray';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(cloneArray).toBeInstanceOf(Function);
 });
 

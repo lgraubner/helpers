@@ -1,6 +1,6 @@
 import { toSlug } from '../toSlug';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(toSlug).toBeInstanceOf(Function);
 });
 

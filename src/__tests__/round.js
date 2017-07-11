@@ -1,6 +1,6 @@
 import { round } from '../round';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(round).toBeInstanceOf(Function);
 });
 

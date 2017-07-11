@@ -1,6 +1,6 @@
 import { stripTags } from '../stripTags';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(stripTags).toBeInstanceOf(Function);
 });
 

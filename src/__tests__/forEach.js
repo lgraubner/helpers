@@ -1,6 +1,6 @@
 import { forEach } from '../forEach';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(forEach).toBeInstanceOf(Function);
 });
 

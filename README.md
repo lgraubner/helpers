@@ -1,5 +1,7 @@
 # ES2015 helpers
 
+[![npm](https://img.shields.io/npm/v/@graubnla/helpers.svg)](https://www.npmjs.com/package/@graubnla/helpers) [![Travis](https://img.shields.io/travis/lgraubner/helpers.svg)](https://travis-ci.org/lgraubner/helpers)
+
 Loose collection of helpers functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and tested thoroughly.
 
 ## Table of contents
@@ -84,6 +86,30 @@ import formatNumber from '@graubnla/helpers/formatNumber';
 const num = 3256.1415;
 
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
+```
+
+### off(els, type, cb[, capture])
+
+Removes event listener from a collection of elements.
+
+```JavaScript
+import off from '@graubnla/helpers/off';
+
+const els = document.getElementsByTagName('button');
+const cb = () => { ... };
+off(els, 'click', cb);
+```
+
+### on(els, type, cb[, capture])
+
+Adds event listener to a collection of elements.
+
+```JavaScript
+import on from '@graubnla/helpers/on';
+
+const els = document.getElementsByTagName('button');
+const cb = () => { ... };
+on(els, 'click', cb);
 ```
 
 ### onReady(cb)

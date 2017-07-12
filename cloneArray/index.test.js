@@ -1,4 +1,4 @@
-import { cloneArray } from '../cloneArray';
+import cloneArray from './';
 
 test('should export a function', () => {
   expect(cloneArray).toBeInstanceOf(Function);

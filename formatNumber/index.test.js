@@ -1,4 +1,4 @@
-import { formatNumber } from '../formatNumber';
+import formatNumber from './';
 
 test('should export a function', () => {
   expect(formatNumber).toBeInstanceOf(Function);

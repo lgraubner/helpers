@@ -1,4 +1,4 @@
-import { cloneObject } from '../cloneObject';
+import cloneObject from './';
 
 test('should export a function', () => {
   expect(cloneObject).toBeInstanceOf(Function);

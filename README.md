@@ -1,6 +1,6 @@
-# @graubnla/helpers
+# ES2015 helpers
 
-Loose collection of utility functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and are tested thoroughly.
+Loose collection of helpers functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and tested thoroughly.
 
 ## Table of contents
 
@@ -20,17 +20,13 @@ This helpers are not meant to be included as whole package. Instead you should c
 
 ```JavaScript
 // ES2015 module
-import { cloneArray } from '@graubnla/helpers';
+import cloneArray from '@graubnla/helpers/cloneArray';
 
 // CommonJS
-var cloneArray = require('@graubnla/helpers').cloneArray;
+var cloneArray = require('@graubnla/helpers/cloneArray');
 ```
 
-The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/#/):
-
-```HTML
-<script src="https://unpkg.com/@graubnla/helpers/dist/helpers.js"></script>
-```
+Keep in mind that the helper functions are written in raw ES2015 and might not work in all browsers. You should transpile your code with [Babel](babeljs.io). Currently [`babel-preset-stage-3`](https://babeljs.io/docs/plugins/preset-stage-3/) is required.
 
 ## Methods
 
@@ -41,7 +37,7 @@ Returns `Array`
 Clones an array.
 
 ```Javascript
-import { cloneArray } from '@graubnla/helpers';
+import cloneArray from '@graubnla/helpers/cloneArray';
 
 const arr = ['monkey', 'lion'];
 
@@ -55,7 +51,7 @@ Returns `Object`
 Clones an object.
 
 ```Javascript
-import { cloneObject } from '@graubnla/helpers';
+import cloneObject from '@graubnla/helpers/cloneObject';
 
 const obj = { animal: 'monkey' };
 
@@ -67,7 +63,7 @@ const clonedObj = cloneObject(obj);
 Iterates over Array like collections such as node lists.
 
 ```JavaScript
-import { forEach } from '@graubnla/helpers';
+import forEach from '@graubnla/helpers/forEach';
 
 const list = document.getElementsByTagName('p');
 
@@ -83,7 +79,7 @@ Returns `string`
 Formats number.
 
 ```JavaScript
-import { formatNumber } from '@graubnla/helpers';
+import formatNumber from '@graubnla/helpers/formatNumber';
 
 const num = 3256.1415;
 
@@ -95,7 +91,7 @@ console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
 Executes callback on document ready.
 
 ```JavaScript
-import { onReady } from '@graubnla/helpers';
+import onReady from '@graubnla/helpers/onReady';
 
 onReady(() => {
   // document ready
@@ -107,7 +103,7 @@ onReady(() => {
 Pipe argument through multiple functions.
 
 ```JavaScript
-import { pipe } from '@graubnla/helpers';
+import pipe from '@graubnla/helpers/pipe';
 
 const process = pipe(fn1, fn2, fn3);
 const result = process(arg);
@@ -120,7 +116,7 @@ Returns `string`
 Pretty prints JSON string.
 
 ```JavaScript
-import { prettyJSON } from '@graubnla/helpers';
+import prettyJSON from '@graubnla/helpers/prettyJSON';
 
 const obj = {
   animal: 'monkey',
@@ -141,7 +137,7 @@ Returns `number`
 Round numbers with given precision.
 
 ```JavaScript
-import { round } from '@graubnla/helpers';
+import round from '@graubnla/helpers/round';
 
 console.log(round(3.1415, 2)); // 3.14
 ```
@@ -151,7 +147,7 @@ console.log(round(3.1415, 2)); // 3.14
 Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
 
 ```JavaScript
-import { scrollTo } from '@graubnla/helpers';
+import scrollTo from '@graubnla/helpers/scrollTo';
 
 const el = document.getElementById('element');
 scrollTo(el);
@@ -167,7 +163,7 @@ Returns `string`
 Strip all html like tags from string.
 
 ```JavaScript
-import { stripTags } from '@graubnla/helpers';
+import stripTags from '@graubnla/helpers/stripTags';
 
 const str = '<p>I like monkeys.</p>';
 
@@ -181,7 +177,7 @@ Returns `number`
 Generate percent value of given input.
 
 ```JavaScript
-import { toPercent } from '@graubnla/helpers';
+import toPercent from '@graubnla/helpers/toPercent';
 
 const num = 0.12;
 
@@ -195,7 +191,7 @@ Returns `string`
 Create slug from string. Transforms to lower-case, remove whitespace, and special chars.
 
 ```JavaScript
-import { toSlug } from '@graubnla/helpers';
+import toSlug from '@graubnla/helpers/toSlug';
 
 const str = 'I like monkeys.';
 

@@ -62,6 +62,20 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
+### forEach(elements, cb)
+
+Iterates over Array like collections such as node lists.
+
+```JavaScript
+import { forEach } from '@graubnla/helpers';
+
+const list = document.getElementsByTagName('p');
+
+forEach(list, (el, index) => {
+  console.log(el, index);
+});
+```
+
 ### formatNumber(num[, precision, decimal, thousand])
 
 Returns `string`
@@ -130,6 +144,20 @@ Round numbers with given precision.
 import { round } from '@graubnla/helpers';
 
 console.log(round(3.1415, 2)); // 3.14
+```
+
+### scrollTo(dest[, duration, easing])
+
+Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
+
+```JavaScript
+import { scrollTo } from '@graubnla/helpers';
+
+const el = document.getElementById('element');
+scrollTo(el);
+
+// scroll to top
+scrollTo(0, 500);
 ```
 
 ### stripTags(str)

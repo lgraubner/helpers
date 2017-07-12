@@ -1,6 +1,6 @@
 import { prettyJSON } from '../prettyJSON';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(prettyJSON).toBeInstanceOf(Function);
 });
 

@@ -1,6 +1,6 @@
 import { formatNumber } from '../formatNumber';
 
-test('should default export a function', () => {
+test('should export a function', () => {
   expect(formatNumber).toBeInstanceOf(Function);
 });
 

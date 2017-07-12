@@ -1,4 +1,4 @@
-import { toSlug } from '../toSlug';
+import toSlug from './';
 
 test('should export a function', () => {
   expect(toSlug).toBeInstanceOf(Function);

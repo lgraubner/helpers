@@ -1,8 +1,6 @@
 {
   "name": "@graubnla/helpers",
-  "version": "1.2.0",
-  "main": "dist/helpers.js",
-  "module": "dist/helpers.es.js",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/lgraubner/helpers"
@@ -16,45 +14,32 @@
   "author": "Lars Graubner <mail@larsgraubner.de>",
   "license": "MIT",
   "files": [
-    "src",
-    "dist",
-    "!**/__tests__"
+    "*/*.js",
+    "!*/*.test.js"
   ],
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "15.0.2",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-import": "2.6.1",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
-    "gzip-size-cli": "^2.0.0",
     "husky": "^0.14.2",
     "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
-    "npm-run-all": "^4.0.2",
-    "prettier": "^1.5.2",
-    "rimraf": "^2.6.1",
-    "rollup": "^0.43.0",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-multi-entry": "^2.0.1",
-    "uglify-js": "^3.0.23"
+    "prettier": "^1.5.2"
   },
   "scripts": {
     "lint": "eslint src",
     "precommit": "lint-staged",
-    "clean": "rimraf dist",
-    "rollup": "rollup -c",
-    "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
-    "build": "npm-run-all lint test clean rollup minify size",
-    "size": "echo \"Gzip size: $(gzip-size $npm_package_main)\"",
     "test": "jest"
   },
   "lint-staged": {
     "*.js": [
-      "eslint --ignore-pattern rollup.config.js",
+      "lint",
       "prettier --single-quote --trailing-comma es5 --write",
       "git add"
     ]

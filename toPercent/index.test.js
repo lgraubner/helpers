@@ -1,4 +1,4 @@
-import { toPercent } from '../toPercent';
+import toPercent from './';
 
 test('should export a function', () => {
   expect(toPercent).toBeInstanceOf(Function);

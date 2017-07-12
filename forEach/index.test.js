@@ -1,4 +1,4 @@
-import { forEach } from '../forEach';
+import forEach from './';
 
 test('should export a function', () => {
   expect(forEach).toBeInstanceOf(Function);

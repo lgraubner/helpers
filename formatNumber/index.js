@@ -1,4 +1,4 @@
-export const formatNumber = (n, precision = 2, decimal = ',', thousand = '.') =>
+export default (n, precision = 2, decimal = ',', thousand = '.') =>
   n
     .toFixed(precision)
     .replace('.', decimal)

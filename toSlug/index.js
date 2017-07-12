@@ -1,4 +1,4 @@
-export const toSlug = s =>
+export default s =>
   s
     .toString()
     .toLowerCase()

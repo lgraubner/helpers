@@ -1,6 +1,8 @@
 {
   "name": "@graubnla/helpers",
   "version": "2.1.0",
+  "main": "dist/helpers.js",
+  "module": "dist/helpers.es.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lgraubner/helpers"
@@ -14,8 +16,9 @@
   "author": "Lars Graubner <mail@larsgraubner.de>",
   "license": "MIT",
   "files": [
-    "*/*.js",
-    "!*/*.test.js"
+    "src",
+    "dist",
+    "!**/*.test.js"
   ],
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -30,12 +33,22 @@
     "husky": "^0.14.2",
     "jest": "^20.0.4",
     "lint-staged": "^4.0.0",
-    "prettier": "^1.5.2"
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "uglifyjs": "^2.4.11"
   },
   "scripts": {
     "lint": "eslint src",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rimraf dist",
+    "rollup": "rollup -c",
+    "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main",
+    "build": "npm-run-all lint test clean rollup minify"
   },
   "lint-staged": {
     "*.js": [

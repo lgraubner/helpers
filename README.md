@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@graubnla/helpers.svg)](https://www.npmjs.com/package/@graubnla/helpers) [![Travis](https://img.shields.io/travis/lgraubner/helpers.svg)](https://travis-ci.org/lgraubner/helpers)
 
-Loose collection of helpers functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and tested thoroughly.
+Loose collection of helper functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and tested thoroughly. You might need polyfills for older browsers.
 
 ## Table of contents
 
@@ -36,6 +36,31 @@ The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https
 
 ## Methods
 
+### $(str)
+
+Returns `Node`
+
+Shortcut for `document.querySelector`. Returns first matching element or `null`.
+
+```JavaScript
+import { $ } from '@graubnla/helpers';
+
+const el = $('.element');
+```
+
+### $$(str)
+
+Returns `NodeList`
+
+Shortcut for `document.querySelectorAll`.
+
+```JavaScript
+import { $$ } from '@graubnla/helpers';
+
+const els = $$('.element');
+```
+
+
 ### cloneArray(arr)
 
 Returns `Array`
@@ -64,20 +89,6 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
-### forEach(elements, cb)
-
-Iterates over Array like collections such as node lists.
-
-```JavaScript
-import { forEach } from '@graubnla/helpers';
-
-const list = document.getElementsByTagName('p');
-
-forEach(list, (el, index) => {
-  console.log(el, index);
-});
-```
-
 ### formatNumber(num[, precision, decimal, thousand])
 
 Returns `string`
@@ -90,30 +101,6 @@ import { formatNumber } from '@graubnla/helpers';
 const num = 3256.1415;
 
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
-```
-
-### off(els, type, cb[, capture])
-
-Removes event listener from a collection of elements.
-
-```JavaScript
-import { off } from '@graubnla/helpers';
-
-const els = document.getElementsByTagName('button');
-const cb = () => { ... };
-off(els, 'click', cb);
-```
-
-### on(els, type, cb[, capture])
-
-Adds event listener to a collection of elements.
-
-```JavaScript
-import { on } from '@graubnla/helpers';
-
-const els = document.getElementsByTagName('button');
-const cb = () => { ... };
-on(els, 'click', cb);
 ```
 
 ### onReady(cb)

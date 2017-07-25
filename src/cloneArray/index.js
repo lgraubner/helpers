@@ -1,1 +1,1 @@
-export default a => a.slice(0);
+export default a => a.slice();

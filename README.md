@@ -103,6 +103,19 @@ const num = 3256.1415;
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
 ```
 
+### offset(el)
+
+Return `Object`
+
+Returns top and left offset of an element relative to the document.
+
+```JavaScript
+import { offset } from '@graubnla/helpers';
+
+const el = document.querySelector('#el');
+console.log(offset(el)); // { top: 123, left: 456 }
+```
+
 ### onReady(cb)
 
 Executes callback on document ready.

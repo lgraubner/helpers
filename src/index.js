@@ -3,6 +3,7 @@ import $$ from './$$';
 import cloneArray from './cloneArray';
 import cloneObject from './cloneObject';
 import formatNumber from './formatNumber';
+import offset from './offset';
 import onReady from './onReady';
 import pipe from './pipe';
 import prettyJSON from './prettyJSON';
@@ -18,6 +19,7 @@ export {
   cloneArray,
   cloneObject,
   formatNumber,
+  offset,
   onReady,
   pipe,
   prettyJSON,

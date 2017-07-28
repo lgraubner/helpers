@@ -1,6 +1,6 @@
 {
   "name": "@graubnla/helpers",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "main": "dist/helpers.js",
   "module": "dist/helpers.es.js",
   "repository": {

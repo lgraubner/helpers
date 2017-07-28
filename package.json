@@ -49,7 +49,7 @@
     "rollup": "rollup -c",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main",
     "build": "npm-run-all lint test clean rollup minify",
-    "prepublishOnly": "npm install && npm run build"
+    "release": "npm install && npm run build && npm publish ."
   },
   "lint-staged": {
     "*.js": [

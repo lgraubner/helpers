@@ -103,6 +103,19 @@ const num = 3256.1415;
 console.log(formatNumber(num, 2, ',', '.')); // "3.256,14"
 ```
 
+### getFileExtension(filename)
+
+Returns `string`
+
+Extracts file extension from filename string. Also works with path and url.
+
+```JavaScript
+import { getFileExtension } from '@graubnla/helpers';
+
+const ext = getFileExtension('image.png');
+console.log(ext); // "png"
+```
+
 ### offset(el)
 
 Return `Object`

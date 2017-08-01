@@ -173,6 +173,19 @@ console.log(prettyJSON(obj));
 // }"
 ```
 
+### removeTrailingSlash(str)
+
+Returns `string`
+
+Removes trailing slashes from a string.
+
+```JavaScript
+import { removeTrailinSlash } from '@graubnla/helpers';
+
+const newStr = removeTrailingSlash('/animal/monkey/');
+console.log(newStr); // "/animal/monkey"
+```
+
 ### round(num[, precision])
 
 Returns `number`

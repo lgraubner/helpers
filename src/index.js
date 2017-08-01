@@ -8,6 +8,7 @@ import offset from './offset';
 import onReady from './onReady';
 import pipe from './pipe';
 import prettyJSON from './prettyJSON';
+import removeTrailingSlash from './removeTrailingSlash';
 import round from './round';
 import scrollTo from './scrollTo';
 import stripTags from './stripTags';
@@ -25,6 +26,7 @@ export {
   onReady,
   pipe,
   prettyJSON,
+  removeTrailingSlash,
   round,
   scrollTo,
   stripTags,

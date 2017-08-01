@@ -48,8 +48,7 @@
     "clean": "rimraf dist",
     "rollup": "rollup -c",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main",
-    "build": "npm-run-all lint test clean rollup minify",
-    "release": "npm install && npm run build && npm publish ."
+    "build": "npm-run-all lint test clean rollup minify"
   },
   "lint-staged": {
     "*.js": [

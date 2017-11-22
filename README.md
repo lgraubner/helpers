@@ -1,4 +1,4 @@
-# ES2015 helpers
+# JavaScript helper functions
 
 [![npm](https://img.shields.io/npm/v/@graubnla/helpers.svg)](https://www.npmjs.com/package/@graubnla/helpers) [![Travis](https://img.shields.io/travis/lgraubner/helpers.svg)](https://travis-ci.org/lgraubner/helpers)
 

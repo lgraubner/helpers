@@ -2,64 +2,15 @@
 
 [![npm](https://img.shields.io/npm/v/@graubnla/helpers.svg)](https://www.npmjs.com/package/@graubnla/helpers) [![Travis](https://img.shields.io/travis/lgraubner/helpers.svg)](https://travis-ci.org/lgraubner/helpers)
 
-Loose collection of helper functions with expressiveness and minimal overhead in mind. All helpers are written in ES2015 and tested thoroughly. You might need polyfills for older browsers.
+Loose collection of helper functions with expressiveness and minimal overhead in mind.
 
 ## Table of contents
 
-- [Usage](#usage)
-- [Methods](#methods)
+- [General](#general)
+- [DOM](#dom)
 - [License](#license)
 
-## Usage
-
-This module is available on [npm](https://www.npmjs.com/).
-
-```
-$ npm install @graubnla/helpers
-```
-
-If you are using some kind of bundler ([webpack](https://webpack.js.org), [rollup](https://rollupjs.org)...) you can import it like this:
-
-```JavaScript
-// ES2015 module
-import cloneArray from '@graubnla/helpers/cloneArray';
-
-// CommonJS
-var cloneArray = require('@graubnla/helpers').cloneArray;
-```
-
-The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/):
-
-```HTML
-<script src="https://unpkg.com/@graubnla/helpers/dist/helpers.js"></script>
-```
-
-## Methods
-
-### $(str)
-
-Returns `Node`
-
-Shortcut for `document.querySelector`. Returns first matching element or `null`.
-
-```JavaScript
-import $ from '@graubnla/helpers/dom/$';
-
-const el = $('.element');
-```
-
-### $$(str)
-
-Returns `NodeList`
-
-Shortcut for `document.querySelectorAll`.
-
-```JavaScript
-import $$ from '@graubnla/helpers/dom/$$';
-
-const els = $$('.element');
-```
-
+## General
 
 ### cloneArray(arr)
 
@@ -116,29 +67,16 @@ const ext = getFileExtension('image.png');
 console.log(ext); // "png"
 ```
 
-### offset(el)
+### noop()
 
-Return `Object`
+Returns `undefined`
 
-Returns top and left offset of an element relative to the document.
-
-```JavaScript
-import offset from '@graubnla/helpers/dom/offset';
-
-const el = document.querySelector('#el');
-console.log(offset(el)); // { top: 123, left: 456 }
-```
-
-### onReady(cb)
-
-Executes callback on document ready.
+No operation function. Does nothing.
 
 ```JavaScript
-import onReady from '@graubnla/helpers/dom/onReady';
+import noop from '@graubnla/helpers/noop';
 
-onReady(() => {
-  // document ready
-});
+noop(); // undefined
 ```
 
 ### pipe(fn1, fn2[, fn3, ...])
@@ -198,20 +136,6 @@ import round from '@graubnla/helpers/round';
 console.log(round(3.1415, 2)); // 3.14
 ```
 
-### scrollTo(dest[, duration, easing])
-
-Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
-
-```JavaScript
-import scrollTo from '@graubnla/helpers/dom/scrollTo';
-
-const el = document.getElementById('element');
-scrollTo(el);
-
-// scroll to top
-scrollTo(0, 500);
-```
-
 ### stripTags(str)
 
 Returns `string`
@@ -228,9 +152,9 @@ console.log(stripTags(str)); // I like monkeys.
 
 ### percentage(num)
 
-Returns `number`
+Returns `string`
 
-Generate percent value of given input.
+Generate percentage string of given input.
 
 ```JavaScript
 import percentage from '@graubnla/helpers/percentage';
@@ -254,6 +178,71 @@ const str = 'I like monkeys.';
 console.log(slug(str)); // i-like-monkeys
 ```
 
+## DOM
+
+### $(str)
+
+Returns `Node`
+
+Shortcut for `document.querySelector`. Returns first matching element or `null`.
+
+```JavaScript
+import $ from '@graubnla/helpers/dom/$';
+
+const el = $('.element');
+```
+
+### $$(str)
+
+Returns `NodeList`
+
+Shortcut for `document.querySelectorAll`.
+
+```JavaScript
+import $$ from '@graubnla/helpers/dom/$$';
+
+const els = $$('.element');
+```
+
+### offset(el)
+
+Return `Object`
+
+Returns top and left offset of an element relative to the document.
+
+```JavaScript
+import offset from '@graubnla/helpers/dom/offset';
+
+const el = document.querySelector('#el');
+console.log(offset(el)); // { top: 123, left: 456 }
+```
+
+### onReady(cb)
+
+Executes callback on document ready.
+
+```JavaScript
+import onReady from '@graubnla/helpers/dom/onReady';
+
+onReady(() => {
+  // document ready
+});
+```
+
+
+### scrollTo(dest[, duration, easing])
+
+Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
+
+```JavaScript
+import scrollTo from '@graubnla/helpers/dom/scrollTo';
+
+const el = document.getElementById('element');
+scrollTo(el);
+
+// scroll to top
+scrollTo(0, 500);
+```
 
 ## License
 

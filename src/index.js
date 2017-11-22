@@ -1,19 +1,19 @@
-import $ from './$';
-import $$ from './$$';
+import $ from './dom/$';
+import $$ from './dom/$$';
 import cloneArray from './cloneArray';
 import cloneObject from './cloneObject';
 import formatNumber from './formatNumber';
 import getFileExtension from './getFileExtension';
-import offset from './offset';
-import onReady from './onReady';
+import offset from './dom/offset';
+import onReady from './dom/onReady';
 import pipe from './pipe';
 import prettyJSON from './prettyJSON';
 import removeTrailingSlash from './removeTrailingSlash';
 import round from './round';
-import scrollTo from './scrollTo';
+import scrollTo from './dom/scrollTo';
 import stripTags from './stripTags';
-import toPercent from './toPercent';
-import toSlug from './toSlug';
+import toPercent from './percentage';
+import toSlug from './slug';
 
 export {
   $,

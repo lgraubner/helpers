@@ -22,7 +22,7 @@ If you are using some kind of bundler ([webpack](https://webpack.js.org), [rollu
 
 ```JavaScript
 // ES2015 module
-import { cloneArray } from '@graubnla/helpers';
+import cloneArray from '@graubnla/helpers/cloneArray';
 
 // CommonJS
 var cloneArray = require('@graubnla/helpers').cloneArray;
@@ -43,7 +43,7 @@ Returns `Node`
 Shortcut for `document.querySelector`. Returns first matching element or `null`.
 
 ```JavaScript
-import { $ } from '@graubnla/helpers';
+import $ from '@graubnla/helpers/dom/$';
 
 const el = $('.element');
 ```
@@ -55,7 +55,7 @@ Returns `NodeList`
 Shortcut for `document.querySelectorAll`.
 
 ```JavaScript
-import { $$ } from '@graubnla/helpers';
+import $$ from '@graubnla/helpers/dom/$$';
 
 const els = $$('.element');
 ```
@@ -68,7 +68,7 @@ Returns `Array`
 Clones an array.
 
 ```Javascript
-import { cloneArray } from '@graubnla/helpers';
+import cloneArray from '@graubnla/helpers/cloneArray';
 
 const arr = ['monkey', 'lion'];
 
@@ -82,7 +82,7 @@ Returns `Object`
 Clones an object.
 
 ```Javascript
-import { cloneObject } from '@graubnla/helpers';
+import cloneObject from '@graubnla/helpers/cloneObject';
 
 const obj = { animal: 'monkey' };
 
@@ -96,7 +96,7 @@ Returns `string`
 Formats number.
 
 ```JavaScript
-import { formatNumber } from '@graubnla/helpers';
+import formatNumber from '@graubnla/helpers/formatNumber';
 
 const num = 3256.1415;
 
@@ -110,7 +110,7 @@ Returns `string`
 Extracts file extension from filename string. Also works with path and url.
 
 ```JavaScript
-import { getFileExtension } from '@graubnla/helpers';
+import getFileExtension from '@graubnla/helpers/getFileExtension';
 
 const ext = getFileExtension('image.png');
 console.log(ext); // "png"
@@ -123,7 +123,7 @@ Return `Object`
 Returns top and left offset of an element relative to the document.
 
 ```JavaScript
-import { offset } from '@graubnla/helpers';
+import offset from '@graubnla/helpers/dom/offset';
 
 const el = document.querySelector('#el');
 console.log(offset(el)); // { top: 123, left: 456 }
@@ -134,7 +134,7 @@ console.log(offset(el)); // { top: 123, left: 456 }
 Executes callback on document ready.
 
 ```JavaScript
-import { onReady } from '@graubnla/helpers';
+import onReady from '@graubnla/helpers/dom/onReady';
 
 onReady(() => {
   // document ready
@@ -146,7 +146,7 @@ onReady(() => {
 Pipe argument through multiple functions.
 
 ```JavaScript
-import { pipe } from '@graubnla/helpers';
+import pipe from '@graubnla/helpers/pipe';
 
 const process = pipe(fn1, fn2, fn3);
 const result = process(arg);
@@ -159,7 +159,7 @@ Returns `string`
 Pretty prints JSON string.
 
 ```JavaScript
-import { prettyJSON } from '@graubnla/helpers';
+import prettyJSON from '@graubnla/helpers/prettyJSON';
 
 const obj = {
   animal: 'monkey',
@@ -180,7 +180,7 @@ Returns `string`
 Removes trailing slashes from a string.
 
 ```JavaScript
-import { removeTrailinSlash } from '@graubnla/helpers';
+import removeTrailinSlash from '@graubnla/helpers/removeTrailinSlash';
 
 const newStr = removeTrailingSlash('/animal/monkey/');
 console.log(newStr); // "/animal/monkey"
@@ -193,7 +193,7 @@ Returns `number`
 Round numbers with given precision.
 
 ```JavaScript
-import { round } from '@graubnla/helpers';
+import round from '@graubnla/helpers/round';
 
 console.log(round(3.1415, 2)); // 3.14
 ```
@@ -203,7 +203,7 @@ console.log(round(3.1415, 2)); // 3.14
 Scrolls view to specified y value or element position. Accepts duration parameter in milliseconds and an alternate [easing function](https://gist.github.com/gre/1650294). Uses [`requestAnimationFrame`](https://developer.mozilla.org/de/docs/Web/API/window/requestAnimationFrame) for performant animation.
 
 ```JavaScript
-import { scrollTo } from '@graubnla/helpers';
+import scrollTo from '@graubnla/helpers/dom/scrollTo';
 
 const el = document.getElementById('element');
 scrollTo(el);
@@ -219,39 +219,39 @@ Returns `string`
 Strip all html like tags from string.
 
 ```JavaScript
-import { stripTags } from '@graubnla/helpers';
+import stripTags from '@graubnla/helpers/stripTags';
 
 const str = '<p>I like monkeys.</p>';
 
 console.log(stripTags(str)); // I like monkeys.
 ```
 
-### toPercent(num)
+### percentage(num)
 
 Returns `number`
 
 Generate percent value of given input.
 
 ```JavaScript
-import { toPercent } from '@graubnla/helpers';
+import percentage from '@graubnla/helpers/percentage';
 
 const num = 0.12;
 
-console.log(toPercent(num)); // 12
+console.log(percentage(num)); // "12%"
 ```
 
-### toSlug(str)
+### slug(str)
 
 Returns `string`
 
 Create slug from string. Transforms to lower-case, remove whitespace, and special chars.
 
 ```JavaScript
-import { toSlug } from '@graubnla/helpers';
+import slug from '@graubnla/helpers/slug';
 
 const str = 'I like monkeys.';
 
-console.log(toSlug(str)); // i-like-monkeys
+console.log(slug(str)); // i-like-monkeys
 ```
 
 

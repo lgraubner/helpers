@@ -1,0 +1,7 @@
+// @flow
+declare module.exports: (
+  n: number,
+  precision: number,
+  decimal: string,
+  thousand: string
+) => string;

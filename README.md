@@ -12,6 +12,20 @@ Loose collection of helper functions with expressiveness and minimal overhead in
 
 ## General
 
+### basename(str[, sep])
+
+Returns `string`
+
+Returns basename of a path.
+
+```JavaScript
+import basename from '@graubnla/helpers/basename';
+
+const path = 'this/is/a/path';
+
+basename(path); // "path"
+```
+
 ### cloneArray(arr)
 
 Returns `Array`

@@ -192,6 +192,18 @@ const str = 'I like monkeys.';
 console.log(slug(str)); // i-like-monkeys
 ```
 
+### timestamp()
+
+Returns `number`
+
+Creates a millisecond timestamp of now.
+
+```JavaScript
+import timestamp from '@graubnla/helpers/timestamp';
+
+console.log(timestamp()); // 1513173869345
+```
+
 ## DOM
 
 ### $(str)

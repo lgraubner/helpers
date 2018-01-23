@@ -125,6 +125,18 @@ console.log(prettyJSON(obj));
 // }"
 ```
 
+### random(min, max)
+
+Returns `number`
+
+Creates random number between (including) min and max.
+
+```JavaScript
+import random from '@graubnla/helpers/random';
+
+console.log(random(1, 100)); // random
+```
+
 ### removeTrailingSlash(str)
 
 Returns `string`

@@ -1,0 +1,2 @@
+// @flow
+declare module.exports: (min: number, max: number) => number;

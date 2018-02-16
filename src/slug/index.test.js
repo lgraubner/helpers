@@ -19,7 +19,7 @@ test('should trim string', () => {
 test('should replace umlauts', () => {
   const str = 'äöüß';
 
-  expect(slug(str)).toBe('aeoeuess');
+  expect(slug(str)).toBe('aouss');
 });
 
 test('should replace whitespace characters', () => {
@@ -43,5 +43,5 @@ test('should replace multiple dashes with one', () => {
 test('should apply all transformations', () => {
   const str = ' Österreich- ist toll!  ';
 
-  expect(slug(str)).toBe('oesterreich-ist-toll');
+  expect(slug(str)).toBe('osterreich-ist-toll');
 });

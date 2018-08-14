@@ -54,6 +54,21 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
+### deepMerge(target, source)
+
+Returns `Object`
+
+Deep merges two objects. Mutates the target object.
+
+```
+import deepMerge from '@graubnla/helpers/deepMerge';
+
+const target = { foo: { bar: 'baz' } };
+const source = { foo: { bar: 2 }, num: 3 };
+
+console.log(deepMerge(target, source)); // { foo: { bar: 2 }, num: 3 }
+```
+
 ### formatNumber(num[, precision, decimal, thousand])
 
 Returns `string`
@@ -79,6 +94,18 @@ import getFileExtension from '@graubnla/helpers/getFileExtension';
 
 const ext = getFileExtension('image.png');
 console.log(ext); // "png"
+```
+
+### isObject(object)
+
+Returns `boolean`
+
+Detect if given value is an object.
+
+```JavaScript
+import isObject from '@graubnla/helpers/isObject';
+
+console.log(isObject({})); // true
 ```
 
 ### noop()
@@ -266,7 +293,6 @@ onReady(() => {
   // document ready
 });
 ```
-
 
 ### scrollTo(dest[, duration, easing])
 

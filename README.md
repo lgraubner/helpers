@@ -54,21 +54,6 @@ const obj = { animal: 'monkey' };
 const clonedObj = cloneObject(obj);
 ```
 
-### deepMerge(target, source)
-
-Returns `Object`
-
-Deep merges two objects. Mutates the target object.
-
-```
-import deepMerge from '@graubnla/helpers/deepMerge';
-
-const target = { foo: { bar: 'baz' } };
-const source = { foo: { bar: 2 }, num: 3 };
-
-console.log(deepMerge(target, source)); // { foo: { bar: 2 }, num: 3 }
-```
-
 ### formatNumber(num[, precision, decimal, thousand])
 
 Returns `string`
@@ -106,6 +91,21 @@ Detect if given value is an object.
 import isObject from '@graubnla/helpers/isObject';
 
 console.log(isObject({})); // true
+```
+
+### mergeDeep(target, source)
+
+Returns `Object`
+
+Deep merges two objects. Mutates the target object.
+
+```
+import mergeDeep from '@graubnla/helpers/mergeDeep';
+
+const target = { foo: { bar: 'baz' } };
+const source = { foo: { bar: 2 }, num: 3 };
+
+console.log(mergeDeep(target, source)); // { foo: { bar: 2 }, num: 3 }
 ```
 
 ### noop()

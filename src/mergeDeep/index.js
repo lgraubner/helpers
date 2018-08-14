@@ -12,7 +12,7 @@ const mergeObject = (target, source) => {
   return target;
 };
 
-const deepMerge = (target, source) => {
+const mergeDeep = (target, source) => {
   if (!isObject(target) || !isObject(source)) {
     throw new Error('Can not merge non objects.');
   }
@@ -20,4 +20,4 @@ const deepMerge = (target, source) => {
   return mergeObject(target, source);
 };
 
-export default deepMerge;
+export default mergeDeep;
